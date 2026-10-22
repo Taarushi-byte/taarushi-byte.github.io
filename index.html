@@ -1,0 +1,309 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Tarushi Mahesh's developer portfolio featuring Python, SQL, data analytics, backend development and AI/ML projects.">
+  <title>Tarushi Mahesh | Developer Portfolio</title>
+  <style>
+    :root {
+      --bg: #0b1020;
+      --panel: #121a2e;
+      --text: #edf2ff;
+      --muted: #aab6d3;
+      --accent: #86a8ff;
+      --border: #27334f;
+    }
+
+    * { box-sizing: border-box; }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      margin: 0;
+      background: var(--bg);
+      color: var(--text);
+      font-family: Arial, Helvetica, sans-serif;
+      line-height: 1.7;
+    }
+
+    a { color: var(--accent); }
+
+    .container {
+      width: min(100% - 36px, 1000px);
+      margin: auto;
+    }
+
+    header {
+      padding: 20px 0;
+      border-bottom: 1px solid var(--border);
+    }
+
+    nav {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 16px;
+      flex-wrap: wrap;
+    }
+
+    .brand {
+      font-size: 1.15rem;
+      font-weight: 700;
+      color: var(--text);
+      text-decoration: none;
+    }
+
+    nav .links {
+      display: flex;
+      gap: 16px;
+      flex-wrap: wrap;
+    }
+
+    nav .links a { text-decoration: none; }
+
+    .hero { padding: 80px 0 60px; }
+
+    .eyebrow {
+      color: var(--accent);
+      font-weight: 700;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      font-size: 0.8rem;
+    }
+
+    h1 {
+      font-size: clamp(2.5rem, 8vw, 4.6rem);
+      line-height: 1.1;
+      margin: 14px 0;
+      letter-spacing: -2px;
+    }
+
+    h2 { font-size: 1.8rem; }
+
+    .hero p, .section-intro {
+      color: var(--muted);
+      max-width: 680px;
+    }
+
+    .actions {
+      display: flex;
+      gap: 12px;
+      flex-wrap: wrap;
+      margin-top: 25px;
+    }
+
+    .btn {
+      display: inline-block;
+      padding: 10px 17px;
+      border: 1px solid var(--accent);
+      border-radius: 8px;
+      text-decoration: none;
+      font-weight: 700;
+    }
+
+    .btn.primary {
+      background: var(--accent);
+      color: #0b1020;
+    }
+
+    section { padding: 38px 0; }
+
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+      gap: 18px;
+    }
+
+    .card {
+      background: var(--panel);
+      border: 1px solid var(--border);
+      border-radius: 14px;
+      padding: 22px;
+    }
+
+    .card h3 { margin-top: 0; }
+
+    .card p, .muted { color: var(--muted); }
+
+    .tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin: 16px 0;
+    }
+
+    .tag {
+      border: 1px solid var(--border);
+      border-radius: 20px;
+      padding: 4px 10px;
+      font-size: 0.85rem;
+      color: var(--muted);
+    }
+
+    .project-link {
+      display: inline-block;
+      margin-top: 8px;
+      font-weight: 700;
+    }
+
+    footer {
+      margin-top: 35px;
+      padding: 28px 0;
+      border-top: 1px solid var(--border);
+      color: var(--muted);
+    }
+
+    @media (max-width: 480px) {
+      .hero { padding-top: 55px; }
+      nav { align-items: flex-start; }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="container">
+      <nav>
+        <a class="brand" href="#home">Tarushi Mahesh</a>
+        <div class="links">
+          <a href="#about">About</a>
+          <a href="#skills">Skills</a>
+          <a href="#projects">Projects</a>
+          <a href="#contact">Contact</a>
+        </div>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero container" id="home">
+      <div class="eyebrow">Developer Portfolio</div>
+      <h1>Building with data,<br>code and curiosity.</h1>
+      <p>
+        I'm Tarushi Mahesh, an undergraduate interested in Python,
+        SQL, data analytics, backend development and AI/ML.
+        I build practical projects to explore data, solve problems
+        and turn technical ideas into useful tools.
+      </p>
+      <div class="actions">
+        <a class="btn primary" href="#projects">Explore Projects</a>
+        <a class="btn" href="https://github.com/Taarushi-byte"
+           target="_blank" rel="noopener noreferrer">GitHub Profile</a>
+      </div>
+    </section>
+
+    <section class="container" id="about">
+      <h2>About Me</h2>
+      <p class="section-intro">
+        I am pursuing Bioinformatics Engineering at Amity University,
+        Noida. My interests span programming, data systems, analytics
+        and machine learning fundamentals. This portfolio documents
+        my learning and project work.
+      </p>
+    </section>
+
+    <section class="container" id="skills">
+      <h2>Technical Skills</h2>
+      <p class="section-intro">
+        Tools and technologies I have studied or used in projects.
+      </p>
+      <div class="card">
+        <h3>Programming & Backend</h3>
+        <div class="tags">
+          <span class="tag">Python</span>
+          <span class="tag">JavaScript</span>
+          <span class="tag">SQL</span>
+          <span class="tag">Flask</span>
+          <span class="tag">REST APIs</span>
+          <span class="tag">OOP</span>
+          <span class="tag">Git & GitHub</span>
+        </div>
+        <h3>Data & Analytics</h3>
+        <div class="tags">
+          <span class="tag">Pandas</span>
+          <span class="tag">Data Cleaning</span>
+          <span class="tag">ETL Fundamentals</span>
+          <span class="tag">Excel</span>
+          <span class="tag">Power BI</span>
+          <span class="tag">Tableau</span>
+          <span class="tag">Matplotlib</span>
+          <span class="tag">scikit-learn Fundamentals</span>
+        </div>
+        <h3>Databases & Concepts</h3>
+        <div class="tags">
+          <span class="tag">MySQL</span>
+          <span class="tag">SQL Server</span>
+          <span class="tag">Schema Design</span>
+          <span class="tag">Data Structures & Algorithms</span>
+          <span class="tag">Statistical Analysis</span>
+        </div>
+      </div>
+    </section>
+
+    <section class="container" id="projects">
+      <h2>Featured Project</h2>
+      <p class="section-intro">
+        A portfolio demonstration using fictional transaction data.
+      </p>
+      <div class="grid">
+        <article class="card">
+          <div class="eyebrow">Python · Data Analytics</div>
+          <h3>E-Commerce Customer Segmentation</h3>
+          <p>
+            A Recency, Frequency and Monetary (RFM) analysis project
+            that summarizes customer purchasing patterns and assigns
+            illustrative customer segments using a sample dataset.
+          </p>
+          <div class="tags">
+            <span class="tag">Python</span>
+            <span class="tag">Pandas</span>
+            <span class="tag">CSV</span>
+            <span class="tag">Matplotlib</span>
+          </div>
+          <a class="project-link"
+             href="https://github.com/Taarushi-byte/ecommerce-customer-segmentation"
+             target="_blank" rel="noopener noreferrer">
+            View source code →
+          </a>
+        </article>
+
+        <article class="card">
+          <div class="eyebrow">Next Project</div>
+          <h3>More projects coming</h3>
+          <p>
+            I am working on expanding this portfolio with additional
+            projects in SQL, data visualization and backend development.
+          </p>
+        </article>
+      </div>
+    </section>
+
+    <section class="container" id="contact">
+      <h2>Let's Connect</h2>
+      <p class="section-intro">
+        Interested in discussing a project, collaboration or
+        entry-level opportunity? Find me on GitHub or LinkedIn.
+      </p>
+      <div class="actions">
+        <a class="btn primary"
+           href="https://github.com/Taarushi-byte"
+           target="_blank" rel="noopener noreferrer">GitHub</a>
+        <a class="btn"
+           href="https://www.linkedin.com/"
+           target="_blank" rel="noopener noreferrer">LinkedIn</a>
+      </div>
+      <p class="muted">
+        Add your personal LinkedIn profile and professional email
+        here before sharing this portfolio with clients.
+      </p>
+    </section>
+  </main>
+
+  <footer>
+    <div class="container">
+      © 2026 Tarushi Mahesh · Built with HTML and CSS.
+    </div>
+  </footer>
+</body>
+</html>
