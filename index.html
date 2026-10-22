@@ -4,169 +4,415 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="Tarushi Mahesh's developer portfolio featuring Python, SQL, data analytics, backend development and AI/ML projects.">
-  <title>Tarushi Mahesh | Developer Portfolio</title>
+  <meta name="theme-color" content="#0b1020">
+  <meta name="description" content="Tarushi Mahesh's portfolio showcasing Python, SQL, data analytics, backend development, and AI/ML projects.">
+  <title>Tarushi Mahesh | Developer & Data Analyst</title>
+
   <style>
     :root {
       --bg: #0b1020;
       --panel: #121a2e;
+      --panel-light: #19243c;
       --text: #edf2ff;
       --muted: #aab6d3;
-      --accent: #86a8ff;
-      --border: #27334f;
+      --accent: #91b4ff;
+      --accent-2: #a8e6cf;
+      --border: #293651;
+      --radius: 16px;
     }
 
-    * { box-sizing: border-box; }
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
 
-    html { scroll-behavior: smooth; }
+    html {
+      scroll-behavior: smooth;
+      scroll-padding-top: 85px;
+    }
 
     body {
-      margin: 0;
+      font-family: Arial, Helvetica, sans-serif;
       background: var(--bg);
       color: var(--text);
-      font-family: Arial, Helvetica, sans-serif;
       line-height: 1.7;
     }
 
-    a { color: var(--accent); }
+    a {
+      color: var(--accent);
+    }
+
+    a:focus-visible,
+    button:focus-visible {
+      outline: 2px solid var(--accent-2);
+      outline-offset: 4px;
+    }
 
     .container {
-      width: min(100% - 36px, 1000px);
+      width: min(1100px, calc(100% - 40px));
       margin: auto;
     }
 
     header {
-      padding: 20px 0;
+      position: sticky;
+      top: 0;
+      z-index: 10;
+      background: rgba(11, 16, 32, 0.96);
       border-bottom: 1px solid var(--border);
+      backdrop-filter: blur(12px);
     }
 
     nav {
+      min-height: 72px;
       display: flex;
       justify-content: space-between;
       align-items: center;
-      gap: 16px;
+      gap: 20px;
       flex-wrap: wrap;
+      padding: 14px 0;
     }
 
     .brand {
-      font-size: 1.15rem;
-      font-weight: 700;
       color: var(--text);
       text-decoration: none;
+      font-size: 1.15rem;
+      font-weight: 800;
+      letter-spacing: -0.4px;
     }
 
-    nav .links {
+    .nav-links {
       display: flex;
-      gap: 16px;
+      align-items: center;
+      gap: 20px;
       flex-wrap: wrap;
     }
 
-    nav .links a { text-decoration: none; }
+    .nav-links a {
+      text-decoration: none;
+      color: var(--muted);
+      font-size: 0.92rem;
+    }
 
-    .hero { padding: 80px 0 60px; }
+    .nav-links a:hover {
+      color: var(--accent);
+    }
+
+    .hero {
+      padding-top: 100px;
+      padding-bottom: 80px;
+      display: grid;
+      grid-template-columns: 1.5fr 0.8fr;
+      align-items: center;
+      gap: 45px;
+    }
 
     .eyebrow {
-      color: var(--accent);
-      font-weight: 700;
-      letter-spacing: 2px;
+      color: var(--accent-2);
       text-transform: uppercase;
-      font-size: 0.8rem;
+      font-size: 0.78rem;
+      letter-spacing: 2.5px;
+      font-weight: 800;
+      margin-bottom: 16px;
     }
 
     h1 {
-      font-size: clamp(2.5rem, 8vw, 4.6rem);
-      line-height: 1.1;
-      margin: 14px 0;
-      letter-spacing: -2px;
+      font-size: clamp(2.8rem, 7vw, 5rem);
+      letter-spacing: -3px;
+      line-height: 1.08;
+      margin-bottom: 24px;
     }
 
-    h2 { font-size: 1.8rem; }
+    .gradient-text {
+      color: var(--accent);
+    }
 
-    .hero p, .section-intro {
+    .hero-description {
       color: var(--muted);
-      max-width: 680px;
+      font-size: 1.08rem;
+      max-width: 650px;
     }
 
     .actions {
       display: flex;
       gap: 12px;
       flex-wrap: wrap;
-      margin-top: 25px;
+      margin-top: 28px;
     }
 
     .btn {
-      display: inline-block;
-      padding: 10px 17px;
-      border: 1px solid var(--accent);
-      border-radius: 8px;
+      display: inline-flex;
+      justify-content: center;
+      align-items: center;
+      gap: 8px;
+      padding: 12px 18px;
+      border: 1px solid var(--border);
+      border-radius: 9px;
       text-decoration: none;
       font-weight: 700;
+      transition: transform 0.2s, background 0.2s;
     }
 
-    .btn.primary {
+    .btn:hover {
+      transform: translateY(-2px);
+    }
+
+    .btn-primary {
       background: var(--accent);
+      border-color: var(--accent);
       color: #0b1020;
     }
 
-    section { padding: 38px 0; }
-
-    .grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
-      gap: 18px;
+    .btn-secondary {
+      color: var(--text);
+      background: var(--panel);
     }
 
-    .card {
+    .hero-card {
+      background: linear-gradient(145deg, var(--panel-light), var(--panel));
+      border: 1px solid var(--border);
+      border-radius: 22px;
+      padding: 28px;
+    }
+
+    .monogram {
+      width: 85px;
+      height: 85px;
+      display: grid;
+      place-items: center;
+      border-radius: 22px;
+      background: var(--accent);
+      color: var(--bg);
+      font-size: 2rem;
+      font-weight: 900;
+      margin-bottom: 25px;
+    }
+
+    .hero-card h2 {
+      font-size: 1.35rem;
+      margin-bottom: 8px;
+    }
+
+    .hero-card p {
+      color: var(--muted);
+      font-size: 0.95rem;
+    }
+
+    .availability {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      margin-top: 20px;
+      font-size: 0.82rem;
+      color: var(--accent-2);
+    }
+
+    .dot {
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
+      background: var(--accent-2);
+    }
+
+    section {
+      padding: 55px 0;
+    }
+
+    .section-heading {
+      font-size: clamp(1.8rem, 4vw, 2.5rem);
+      letter-spacing: -1px;
+      margin-bottom: 12px;
+    }
+
+    .section-description {
+      color: var(--muted);
+      max-width: 720px;
+      margin-bottom: 28px;
+    }
+
+    .about-grid,
+    .project-grid,
+    .skill-grid {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 20px;
+    }
+
+    .panel {
+      padding: 25px;
       background: var(--panel);
       border: 1px solid var(--border);
-      border-radius: 14px;
-      padding: 22px;
+      border-radius: var(--radius);
     }
 
-    .card h3 { margin-top: 0; }
+    .panel h3 {
+      margin-bottom: 10px;
+      font-size: 1.15rem;
+    }
 
-    .card p, .muted { color: var(--muted); }
+    .panel p,
+    .panel li {
+      color: var(--muted);
+    }
+
+    .education {
+      margin-top: 12px;
+      padding-left: 20px;
+    }
+
+    .education li {
+      margin-bottom: 8px;
+    }
+
+    .skill-group {
+      margin-bottom: 12px;
+    }
 
     .tags {
       display: flex;
       flex-wrap: wrap;
       gap: 8px;
-      margin: 16px 0;
+      margin-top: 14px;
     }
 
     .tag {
+      padding: 5px 11px;
       border: 1px solid var(--border);
-      border-radius: 20px;
-      padding: 4px 10px;
-      font-size: 0.85rem;
+      border-radius: 30px;
       color: var(--muted);
+      font-size: 0.83rem;
+      background: rgba(255, 255, 255, 0.02);
+    }
+
+    .project-card {
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+      min-height: 100%;
+    }
+
+    .project-type {
+      color: var(--accent-2);
+      font-size: 0.76rem;
+      text-transform: uppercase;
+      letter-spacing: 1.5px;
+      font-weight: 800;
+      margin-bottom: 12px;
+    }
+
+    .project-card h3 {
+      font-size: 1.3rem;
+    }
+
+    .project-card p {
+      margin-bottom: 8px;
+    }
+
+    .project-card .tags {
+      margin-bottom: 20px;
     }
 
     .project-link {
-      display: inline-block;
-      margin-top: 8px;
+      margin-top: auto;
+      padding-top: 10px;
       font-weight: 700;
+      text-decoration: none;
     }
 
-    footer {
-      margin-top: 35px;
-      padding: 28px 0;
-      border-top: 1px solid var(--border);
+    .project-link:hover {
+      text-decoration: underline;
+    }
+
+    .note {
+      margin-top: 20px;
+      font-size: 0.88rem;
       color: var(--muted);
     }
 
-    @media (max-width: 480px) {
-      .hero { padding-top: 55px; }
-      nav { align-items: flex-start; }
+    .contact-panel {
+      text-align: center;
+      padding: 42px 28px;
+      background: linear-gradient(145deg, var(--panel-light), var(--panel));
+      border: 1px solid var(--border);
+      border-radius: 20px;
+    }
+
+    .contact-panel .section-description {
+      margin: 12px auto 0;
+    }
+
+    .contact-links {
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 12px;
+      margin-top: 25px;
+    }
+
+    footer {
+      margin-top: 55px;
+      padding: 26px 0;
+      border-top: 1px solid var(--border);
+      color: var(--muted);
+      font-size: 0.9rem;
+    }
+
+    .footer-inner {
+      display: flex;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 12px;
+    }
+
+    @media (max-width: 760px) {
+      .hero {
+        grid-template-columns: 1fr;
+        padding-top: 65px;
+        gap: 32px;
+      }
+
+      .hero-card {
+        max-width: 500px;
+      }
+
+      .about-grid,
+      .project-grid,
+      .skill-grid {
+        grid-template-columns: 1fr;
+      }
+
+      nav {
+        align-items: flex-start;
+      }
+
+      .nav-links {
+        gap: 12px;
+      }
+
+      h1 {
+        letter-spacing: -1.5px;
+      }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      html {
+        scroll-behavior: auto;
+      }
+
+      *, *::before, *::after {
+        transition: none !important;
+      }
     }
   </style>
 </head>
+
 <body>
   <header>
     <div class="container">
-      <nav>
+      <nav aria-label="Main navigation">
         <a class="brand" href="#home">Tarushi Mahesh</a>
-        <div class="links">
+
+        <div class="nav-links">
           <a href="#about">About</a>
           <a href="#skills">Skills</a>
           <a href="#projects">Projects</a>
@@ -178,131 +424,257 @@
 
   <main>
     <section class="hero container" id="home">
-      <div class="eyebrow">Developer Portfolio</div>
-      <h1>Building with data,<br>code and curiosity.</h1>
-      <p>
-        I'm Tarushi Mahesh, an undergraduate interested in Python,
-        SQL, data analytics, backend development and AI/ML.
-        I build practical projects to explore data, solve problems
-        and turn technical ideas into useful tools.
-      </p>
-      <div class="actions">
-        <a class="btn primary" href="#projects">Explore Projects</a>
-        <a class="btn" href="https://github.com/Taarushi-byte"
-           target="_blank" rel="noopener noreferrer">GitHub Profile</a>
+      <div>
+        <p class="eyebrow">Developer · Data Analytics · AI/ML</p>
+
+        <h1>
+          Turning data into
+          <span class="gradient-text">insights.</span>
+        </h1>
+
+        <p class="hero-description">
+          I'm Tarushi Mahesh, an undergraduate interested in Python,
+          SQL, data analytics, backend development, and machine learning.
+          I build practical projects to explore data, improve workflows,
+          and turn technical ideas into useful solutions.
+        </p>
+
+        <div class="actions">
+          <a class="btn btn-primary" href="#projects">Explore My Projects ↗</a>
+
+          <a class="btn btn-secondary"
+             href="https://github.com/Taarushi-byte"
+             target="_blank"
+             rel="noopener noreferrer">GitHub Profile ↗</a>
+        </div>
       </div>
+
+      <aside class="hero-card">
+        <div class="monogram" aria-label="Tarushi Mahesh initials">TM</div>
+
+        <h2>Tarushi Mahesh</h2>
+
+        <p>
+          Bioinformatics Engineering undergraduate with interests in
+          software development, data systems, and analytics.
+        </p>
+
+        <div class="availability">
+          <span class="dot"></span>
+          Open to suitable opportunities
+        </div>
+      </aside>
     </section>
 
     <section class="container" id="about">
-      <h2>About Me</h2>
-      <p class="section-intro">
-        I am pursuing Bioinformatics Engineering at Amity University,
-        Noida. My interests span programming, data systems, analytics
-        and machine learning fundamentals. This portfolio documents
-        my learning and project work.
+      <p class="eyebrow">Introduction</p>
+      <h2 class="section-heading">About Me</h2>
+
+      <p class="section-description">
+        I enjoy combining programming and analytical thinking to solve
+        practical problems. My portfolio highlights hands-on learning,
+        documented code, and projects that demonstrate my approach to
+        data processing and software development.
       </p>
+
+      <div class="about-grid">
+        <article class="panel">
+          <h3>Education</h3>
+          <p><strong>Bioinformatics Engineering</strong></p>
+          <p>Amity University, Noida</p>
+          <p>2023–2027</p>
+        </article>
+
+        <article class="panel">
+          <h3>Areas of Interest</h3>
+          <ul class="education">
+            <li>Python programming and backend development</li>
+            <li>SQL, data cleaning, and ETL workflows</li>
+            <li>Business intelligence and data visualization</li>
+            <li>Machine learning fundamentals</li>
+          </ul>
+        </article>
+      </div>
     </section>
 
     <section class="container" id="skills">
-      <h2>Technical Skills</h2>
-      <p class="section-intro">
-        Tools and technologies I have studied or used in projects.
+      <p class="eyebrow">What I Work With</p>
+      <h2 class="section-heading">Technical Skills</h2>
+
+      <p class="section-description">
+        Technologies and concepts I have studied or used in my work.
       </p>
-      <div class="card">
-        <h3>Programming & Backend</h3>
-        <div class="tags">
-          <span class="tag">Python</span>
-          <span class="tag">JavaScript</span>
-          <span class="tag">SQL</span>
-          <span class="tag">Flask</span>
-          <span class="tag">REST APIs</span>
-          <span class="tag">OOP</span>
-          <span class="tag">Git & GitHub</span>
-        </div>
-        <h3>Data & Analytics</h3>
-        <div class="tags">
-          <span class="tag">Pandas</span>
-          <span class="tag">Data Cleaning</span>
-          <span class="tag">ETL Fundamentals</span>
-          <span class="tag">Excel</span>
-          <span class="tag">Power BI</span>
-          <span class="tag">Tableau</span>
-          <span class="tag">Matplotlib</span>
-          <span class="tag">scikit-learn Fundamentals</span>
-        </div>
-        <h3>Databases & Concepts</h3>
-        <div class="tags">
-          <span class="tag">MySQL</span>
-          <span class="tag">SQL Server</span>
-          <span class="tag">Schema Design</span>
-          <span class="tag">Data Structures & Algorithms</span>
-          <span class="tag">Statistical Analysis</span>
-        </div>
+
+      <div class="skill-grid">
+        <article class="panel">
+          <h3>Programming & Backend</h3>
+          <div class="tags">
+            <span class="tag">Python</span>
+            <span class="tag">JavaScript</span>
+            <span class="tag">SQL</span>
+            <span class="tag">Flask</span>
+            <span class="tag">REST APIs</span>
+            <span class="tag">OOP</span>
+            <span class="tag">Git & GitHub</span>
+          </div>
+        </article>
+
+        <article class="panel">
+          <h3>Data & Analytics</h3>
+          <div class="tags">
+            <span class="tag">Pandas</span>
+            <span class="tag">NumPy</span>
+            <span class="tag">Matplotlib</span>
+            <span class="tag">Data Cleaning</span>
+            <span class="tag">ETL Fundamentals</span>
+            <span class="tag">Statistical Analysis</span>
+          </div>
+        </article>
+
+        <article class="panel">
+          <h3>Databases</h3>
+          <div class="tags">
+            <span class="tag">MySQL</span>
+            <span class="tag">SQL Server</span>
+            <span class="tag">Schema Design</span>
+            <span class="tag">Query Optimization</span>
+          </div>
+        </article>
+
+        <article class="panel">
+          <h3>BI & Other Tools</h3>
+          <div class="tags">
+            <span class="tag">Power BI</span>
+            <span class="tag">Tableau</span>
+            <span class="tag">Advanced Excel</span>
+            <span class="tag">Jupyter Notebook</span>
+            <span class="tag">scikit-learn Fundamentals</span>
+          </div>
+        </article>
       </div>
     </section>
 
     <section class="container" id="projects">
-      <h2>Featured Project</h2>
-      <p class="section-intro">
-        A portfolio demonstration using fictional transaction data.
+      <p class="eyebrow">Selected Work</p>
+      <h2 class="section-heading">Featured Projects</h2>
+
+      <p class="section-description">
+        Explore the code and documentation for my portfolio work.
+        Each project links to its GitHub repository.
       </p>
-      <div class="grid">
-        <article class="card">
-          <div class="eyebrow">Python · Data Analytics</div>
+
+      <div class="project-grid">
+        <article class="panel project-card">
+          <p class="project-type">01 · Python & Analytics</p>
+
           <h3>E-Commerce Customer Segmentation</h3>
+
           <p>
-            A Recency, Frequency and Monetary (RFM) analysis project
-            that summarizes customer purchasing patterns and assigns
-            illustrative customer segments using a sample dataset.
+            An RFM analysis project that calculates customer recency,
+            purchase frequency, and monetary value from transaction data.
+            It assigns illustrative customer segments to demonstrate
+            customer analytics workflows.
           </p>
+
           <div class="tags">
             <span class="tag">Python</span>
             <span class="tag">Pandas</span>
             <span class="tag">CSV</span>
             <span class="tag">Matplotlib</span>
           </div>
+
           <a class="project-link"
              href="https://github.com/Taarushi-byte/ecommerce-customer-segmentation"
-             target="_blank" rel="noopener noreferrer">
-            View source code →
+             target="_blank"
+             rel="noopener noreferrer">
+            View Source Code →
           </a>
         </article>
 
-        <article class="card">
-          <div class="eyebrow">Next Project</div>
-          <h3>More projects coming</h3>
+        <article class="panel project-card">
+          <p class="project-type">02 · In Progress</p>
+
+          <h3>SQL & Data Analysis Projects</h3>
+
           <p>
-            I am working on expanding this portfolio with additional
-            projects in SQL, data visualization and backend development.
+            The next stage of this portfolio will include additional
+            work in SQL querying, data cleaning, reporting, and
+            visualization as the projects are developed.
           </p>
+
+          <div class="tags">
+            <span class="tag">SQL</span>
+            <span class="tag">Data Analysis</span>
+            <span class="tag">Reporting</span>
+          </div>
+
+          <a class="project-link"
+             href="https://github.com/Taarushi-byte"
+             target="_blank"
+             rel="noopener noreferrer">
+            View GitHub Profile →
+          </a>
         </article>
       </div>
+
+      <p class="note">
+        Note: The customer segmentation repository uses fictional
+        demonstration data. The project is presented as portfolio work;
+        its results should not be interpreted as real client outcomes.
+      </p>
     </section>
 
     <section class="container" id="contact">
-      <h2>Let's Connect</h2>
-      <p class="section-intro">
-        Interested in discussing a project, collaboration or
-        entry-level opportunity? Find me on GitHub or LinkedIn.
-      </p>
-      <div class="actions">
-        <a class="btn primary"
-           href="https://github.com/Taarushi-byte"
-           target="_blank" rel="noopener noreferrer">GitHub</a>
-        <a class="btn"
-           href="https://www.linkedin.com/"
-           target="_blank" rel="noopener noreferrer">LinkedIn</a>
+      <div class="contact-panel">
+        <p class="eyebrow">Get in Touch</p>
+
+        <h2 class="section-heading">Let's Connect</h2>
+
+        <p class="section-description">
+          Have a project idea, collaboration proposal, or suitable
+          opportunity? Contact me using one of the options below.
+        </p>
+
+        <div class="contact-links">
+          <a class="btn btn-primary"
+             href="mailto:tarushimahesh@gmail.com">
+            Email Me
+          </a>
+
+          <a class="btn btn-secondary"
+             href="https://www.linkedin.com/in/tarushi-m-080983260/"
+             target="_blank"
+             rel="noopener noreferrer">
+            LinkedIn ↗
+          </a>
+
+          <a class="btn btn-secondary"
+             href="https://github.com/Taarushi-byte"
+             target="_blank"
+             rel="noopener noreferrer">
+            GitHub ↗
+          </a>
+
+          <a class="btn btn-secondary"
+             href="tel:+918595590467">
+            Call Me
+          </a>
+
+          <a class="btn btn-secondary"
+             href="https://wa.me/918595590467"
+             target="_blank"
+             rel="noopener noreferrer">
+            WhatsApp ↗
+          </a>
+        </div>
       </div>
-      <p class="muted">
-        Add your personal LinkedIn profile and professional email
-        here before sharing this portfolio with clients.
-      </p>
     </section>
   </main>
 
   <footer>
-    <div class="container">
-      © 2026 Tarushi Mahesh · Built with HTML and CSS.
+    <div class="container footer-inner">
+      <p>© 2026 Tarushi Mahesh</p>
+      <p>Designed and built with HTML & CSS.</p>
     </div>
   </footer>
 </body>
